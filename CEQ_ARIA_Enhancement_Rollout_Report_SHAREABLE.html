@@ -193,8 +193,11 @@
 
   <p>ARIA runs on Google Apps Script as a web app, so there are no server or hosting bills - it all sits on Google's infrastructure through a standard Workspace subscription. The only real ongoing costs are the two AI services, and they're both pay-as-you-go.</p>
 
-  <h3>AI costs</h3>
-  <p>We use OpenAI Whisper for transcription and Anthropic's Claude Sonnet for everything else (coaching conversations, critique, question generation, etc.). Both bill in US dollars, so the figures below are in USD.</p>
+  <h3>Claude AI subscription</h3>
+  <p>The development work and AI-assisted building of ARIA runs on a Claude Max subscription. I'm currently on the Max 5x plan at $100/month (roughly £80), but I'm already hitting the usage ceiling regularly during heavy development periods, so I may need to move up to the Max 20x plan at $200/month (roughly £160). This is a fixed monthly cost regardless of how many users the platform has - it covers the development and AI tooling side, not the platform's own API calls.</p>
+
+  <h3>Platform API costs</h3>
+  <p>Separately, the platform itself uses two AI services when users interact with it: OpenAI Whisper for transcription and Anthropic's Claude Sonnet for everything else (coaching conversations, critique, question generation, etc.). Both bill in US dollars on a pay-as-you-go basis, so the figures below are in USD.</p>
 
   <table class="data-table">
    <tr><th>Service</th><th>What it does</th><th>Cost per use</th><th>Notes</th></tr>
@@ -203,13 +206,14 @@
    <tr><td><strong>Claude Sonnet (Conversations)</strong></td><td>Coaching, Practice Partner, Ask ARIA, Question Generator, Session Prep</td><td>About $0.01 - $0.05 per exchange</td><td>Individually tiny but adds up over longer sessions. A 20-message practice might cost $0.30 - $0.60 total</td></tr>
   </table>
 
-  <h3>What that looks like at scale</h3>
+  <h3>What the total looks like at scale</h3>
+  <p>Combining the Claude subscription and the platform API costs:</p>
   <table class="data-table">
-   <tr><th>Scale</th><th>Typical usage</th><th>Estimated monthly API cost</th></tr>
-   <tr><td><strong>Pilot (10-20 users)</strong></td><td>2-3 recordings each per month, moderate use of other features</td><td>$30 - $80</td></tr>
-   <tr><td><strong>Single cohort (30-50 users)</strong></td><td>2-4 recordings each, regular use across the board</td><td>$80 - $250</td></tr>
-   <tr><td><strong>Organisational (100-200 users)</strong></td><td>Mixed - some heavy users, some light</td><td>$300 - $800</td></tr>
-   <tr><td><strong>Full scale (500+ users)</strong></td><td>Broad adoption</td><td>$1,000 - $3,000</td></tr>
+   <tr><th>Scale</th><th>Typical usage</th><th>Claude subscription</th><th>Platform API costs</th><th>Total monthly</th></tr>
+   <tr><td><strong>Pilot (10-20 users)</strong></td><td>2-3 recordings each, moderate use of other features</td><td>$100 - $200</td><td>$30 - $80</td><td>$130 - $280</td></tr>
+   <tr><td><strong>Single cohort (30-50 users)</strong></td><td>2-4 recordings each, regular use across the board</td><td>$100 - $200</td><td>$80 - $250</td><td>$180 - $450</td></tr>
+   <tr><td><strong>Organisational (100-200 users)</strong></td><td>Mixed - some heavy users, some light</td><td>$200</td><td>$300 - $800</td><td>$500 - $1,000</td></tr>
+   <tr><td><strong>Full scale (500+ users)</strong></td><td>Broad adoption</td><td>$200</td><td>$1,000 - $3,000</td><td>$1,200 - $3,200</td></tr>
   </table>
 
   <div class="callout">
@@ -231,7 +235,7 @@
   <p>Nothing committed yet. If we decide to spend on marketing for pilot recruitment or awareness, we're probably looking at a landing page (minimal if I build it), some LinkedIn activity (could be a few hundred pounds a month), and maybe case study content once a pilot's running. All optional and worth discussing separately.</p>
 
   <div class="callout-green">
-   <strong>Bottom line:</strong> It's very cheap to run. At pilot scale we're looking at under $100 a month. Even with hundreds of users it's hundreds not thousands. No licence fees, no server costs, no fixed overheads.
+   <strong>Bottom line:</strong> It's very cheap to run. At pilot scale we're looking at a few hundred dollars a month all in. Even at full organisational scale it stays well under $3,500. No per-seat licence fees, no server costs beyond the potential Cloud Run move later on.
   </div>
 
 
@@ -265,13 +269,13 @@
 
   <table class="data-table">
    <tr><th>Model</th><th>Price point</th><th>Who it suits</th><th>Notes</th></tr>
-   <tr><td><strong>Per user per month</strong></td><td>£30 - £60/user/month</td><td>Organisational rollouts with a set number of managers</td><td>Well below BetterUp/CoachHub territory. 50 users at £45/month = £2,250/month (£27,000/year) against running costs of about £60 - £200/month.</td></tr>
+   <tr><td><strong>Per user per month</strong></td><td>£30 - £60/user/month</td><td>Organisational rollouts with a set number of managers</td><td>Well below BetterUp/CoachHub territory. 50 users at £50/month = £2,500/month (£30,000/year) against total running costs of roughly £100 - £350/month.</td></tr>
    <tr><td><strong>Cohort licence</strong></td><td>£5,000 - £15,000 per cohort</td><td>CEQ programme delivery, bundled with CEQ training delivery</td><td>Fixed fee for a cohort of 20-30 people over 6-12 months. Simpler for the client, predictable for us. Platform becomes part of the training package.</td></tr>
    <tr><td><strong>Enterprise annual licence</strong></td><td>£25,000 - £75,000/year</td><td>Full organisational deployment with bespoke setup</td><td>Includes access for all users, custom configuration (company values, competency models, custom lenses), ongoing support. This is the model for the deeper customisation work.</td></tr>
   </table>
 
   <h3>Margins</h3>
-  <p>Because the running costs are so low, the margins on API and platform costs alone are very strong. At £45/month with 50 users, that's £2,250 coming in against £60-200 going out. Even a £5,000 cohort fee against maybe £500-800 in total API costs over six months leaves plenty of room.</p>
+  <p>Because the running costs are so low, the margins are very strong. At £50/month with 50 users, that's £2,500 coming in against roughly £100-350 going out (Claude subscription plus platform API costs). Even a £5,000 cohort fee against maybe £1,000-1,500 in total running costs over six months leaves plenty of room.</p>
 
   <h3>Development costs</h3>
   <p>My development fees TBC.</p>
