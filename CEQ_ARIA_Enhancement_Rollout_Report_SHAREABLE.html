@@ -39,6 +39,8 @@
  .usp-box .usp-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #2d5fa8; margin-bottom: 8px; }
  .usp-box p { margin: 0 0 10px 0; font-size: 0.92rem; color: #1a1952; }
  .usp-box p:last-child { margin-bottom: 0; }
+ .update-box { border: 2px solid #2d5fa8; border-radius: 8px; padding: 20px 24px; margin: 24px 0; background: #ffffff; }
+ .update-box .update-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #2d5fa8; margin-bottom: 10px; }
  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 22px; }
  .feature-card { background: #f5f7fc; border: 1px solid #e2e6ef; border-radius: 8px; padding: 16px 18px; }
  .feature-card .card-title { font-size: 0.92rem; font-weight: 700; color: #1a1952; margin-bottom: 6px; }
@@ -86,14 +88,14 @@
 
  <div class="body">
 
-  <p>Following on from our meeting at St Pancras on Wednesday, this document covers what's coming next for ARIA - the five enhancements I'm building, how long they'll take, what it costs to run, what we could charge clients, and a few things we'll need to figure out as we go. I am developing five major enhancements that will take the app to the next level.</p>
+  <p>Following on from our meeting at St Pancras on Wednesday, this document covers what's coming next for ARIA - the six enhancements I'm building, how long they'll take, what it costs to run, what we could charge clients, and a few things we'll need to figure out as we go. I am developing six major enhancements that will take the app to the next level.</p>
 
   <!-- ════════════════════════════════════════════ -->
   <!-- THE FIVE ENHANCEMENTS -->
   <!-- ════════════════════════════════════════════ -->
   <div class="part-divider">
    <div class="part-label">Part One</div>
-   <div class="part-title">The Five Enhancements</div>
+   <div class="part-title">The Six Enhancements</div>
    <div class="part-sub">What I'm building and what each one will do.</div>
   </div>
 
@@ -151,6 +153,23 @@
    <p>If you're working on your listening, you pick the SuperListening lens and get specific feedback on whether you're using the coachee's own language, how you're using silence, and how well you're picking up on what's being said beneath the surface. ARIA will also flag the areas it can't assess from audio alone - things like body language, eye contact and other non-verbal cues - as a reminder to the user to stay aware of those in the room. If you're prepping for a BreakThrough session, you can see exactly how your coaching lined up with that model. The critique becomes personal rather than generic.</p>
   </div>
 
+  <!-- Enhancement 6: Interactive Critique -->
+  <h3>6. Interactive Critique Panel</h3>
+  <div class="update-box" style="margin-top: 10px; margin-bottom: 20px;">
+   <div class="update-label">Enhancement Update - 12/04/26 - V3.6</div>
+  </div>
+  <p>This is probably the biggest single enhancement. Right now, the critique is a read-only report. I want to turn it into something the coach can actually work through, moment by moment, learning as they go. I've done some early proof-of-concept testing on the core mechanics and the approach works, so now it's about building it out properly, refining the logic and getting it right. Here's what it will include:</p>
+  <p><strong>AI Speaker Diarisation.</strong> Claude Sonnet will automatically identify and label Coach, Coachee and Observer turns in the transcript. No manual tagging needed. Each speaker will get their own visual style so you can see at a glance who said what.</p>
+  <p><strong>Interactive Coaching Overlay.</strong> Toggle buttons above the transcript will activate a colour-coded overlay that works across all CEQ lenses. OUCH! habits, positive coaching behaviours, question types and other coaching patterns will be highlighted directly on the coach's turns. Closed questions in red, statements in orange, multiple inputs in yellow, open questions in green, why questions in amber, info-gathering in blue. Only coach turns will be analysed.</p>
+  <p><strong>Click-to-Learn on Every Highlight.</strong> Every highlighted moment in the transcript will be clickable. Click it and you'll see three things: why it was flagged, a better alternative question based on CEQ's methodology, and a button to open a deeper conversation with ARIA about that specific moment.</p>
+  <p><strong>CEQ Coaching Methodology.</strong> CEQ's question classification will be built into the critique engine, the transcript overlay and the Ask ARIA popups: Best Questions (What/How) at the top, then Excellent (Would/Could/Might), Good with Caution (Why), and Information Gathering (Who/When/Where). Every piece of feedback will be tied back to CEQ's methodology rather than generic coaching advice.</p>
+  <p><strong>Coach-Only Analysis.</strong> A dedicated pre-processor will extract coach-only speech before it reaches the AI, making it impossible for coachee questions or statements to get counted in the OUCH! analysis. Verbal fillers like "Okay" and "Mm-hmm" will be filtered out too. Every flagged habit will be listed individually with a clickable transcript link, not just summarised as "3 instances".</p>
+
+  <div class="usp-box">
+   <div class="usp-label">In practice</div>
+   <p>This will change the whole experience of reviewing a session. Instead of reading a report and thinking "fair enough", the coach will be able to work through their conversation step by step, see their habits colour-coded in front of them, click on anything they want to understand better, and have ARIA coach them on it. Every recording becomes a proper learning session, not just a score. This is a substantial piece of development and will take proper time to get right, but the proof of concept is solid and I'm aiming to have it finished by the time we demo to David.</p>
+  </div>
+
 
   <!-- ════════════════════════════════════════════ -->
   <!-- TIMELINE AND PHASES -->
@@ -170,6 +189,7 @@
    <tr><td><strong>Phase 2</strong></td><td>Practice Partner Modes (framework + first 2 modes, then remaining 4)</td><td>2 weeks</td></tr>
    <tr><td><strong>Phase 3</strong></td><td>Session Preparation (5th pill + all meeting types)</td><td>2 weeks</td></tr>
    <tr><td><strong>Phase 4</strong></td><td>Critique Lenses (starting with OUCH! and SuperListening, through to all 8)</td><td>4 - 5 weeks</td></tr>
+   <tr><td><strong>Phase 5</strong></td><td>Interactive Critique Panel (diarisation, overlays, click-to-learn, coach-only analysis) - concept tested</td><td>2 - 3 weeks rollout</td></tr>
   </table>
 
   <p><strong>Total: roughly 6 - 8 weeks</strong> for everything, working through in order. Phase 1 should be done within a fortnight of starting.</p>
@@ -291,15 +311,15 @@
   <div class="part-divider">
    <div class="part-label">Part Five</div>
    <div class="part-title">The Bigger Picture</div>
-   <div class="part-sub">Beyond the five enhancements and what still needs working out.</div>
+   <div class="part-sub">Beyond the six enhancements and what still needs working out.</div>
   </div>
 
-  <p>Gareth's ARIA pitch document sets out a longer-term ambition that goes beyond these five enhancements - a platform that doesn't just teach coaching frameworks but weaves them into how a whole organisation operates. The company's own principles, their people processes, right down to the individual manager preparing for their next one-to-one.</p>
+  <p>Gareth's ARIA pitch document sets out a longer-term ambition that goes beyond these six enhancements - a platform that doesn't just teach coaching frameworks but weaves them into how a whole organisation operates. The company's own principles, their people processes, right down to the individual manager preparing for their next one-to-one.</p>
 
-  <p>That's a four-layer model: CEQ IP, company principles, people processes, individual manager. The five enhancements cover the first layer properly and start to touch the second. The deeper layers are where the real customisation happens, and that depends on things we can't fully plan for until we're working with an actual client.</p>
+  <p>That's a four-layer model: CEQ IP, company principles, people processes, individual manager. The six enhancements cover the first layer properly and start to touch the second. The deeper layers are where the real customisation happens, and that depends on things we can't fully plan for until we're working with an actual client.</p>
 
   <h3>What I can build now</h3>
-  <p>Everything in Part One. All five enhancements use the technology and architecture we've already got. No new APIs, no new infrastructure, nothing we haven't done before. The 6-8 week estimate is based on the actual work involved.</p>
+  <p>Everything in Part One. All six enhancements use the technology and architecture we've already got. No new APIs, no new infrastructure, nothing we haven't done before. The 6-8 week estimate is based on the actual work involved.</p>
 
   <h3>What'll depend on the client</h3>
   <p>The pitch document describes a platform that's bespoke to each organisation - coaching frameworks mapped to their values, their competency models, their performance processes. That's all doable, but how much work it is will vary hugely from client to client. Some organisations have their competency frameworks well documented and we could load them fairly quickly. Others will need to work through that thinking first, with CEQ's help, before we can build it in.</p>
@@ -332,7 +352,7 @@
   </div>
 
   <div class="callout-warm">
-   The five enhancements are scoped and I'm ready to build them. The bigger vision is all doable, but the deeper stuff will take longer and we'll need a real client involved to make the right decisions. Better to be upfront about that than overpromise.
+   The enhancements are scoped and I'm ready to build them. The bigger vision is all doable, but the deeper stuff will take longer and we'll need a real client involved to make the right decisions. Better to be upfront about that than overpromise.
   </div>
 
 
@@ -346,7 +366,7 @@
   </div>
 
   <h3>Development</h3>
-  <p>I'll build all five within the existing Google Apps Script and web app setup, using AI-assisted development the same way I built what we've got now. No additional dev resource needed for the five enhancements. If we wanted to tackle the deeper customisation work (360, profiles, full org rollout) at the same time, that'd be a different conversation, but for this lot we're fine.</p>
+  <p>I'll build all six within the existing Google Apps Script and web app setup, using AI-assisted development the same way I built what we've got now. No additional dev resource needed for these enhancements. If we wanted to tackle the deeper customisation work (360, profiles, full org rollout) at the same time, that'd be a different conversation, but for this lot we're fine.</p>
 
   <h3>CEQ team input</h3>
   <p>A few of these will need someone from the CEQ team to review specific bits: the Knowledge Index descriptions (making sure the plain-English summaries of each framework are right), the Practice Partner mode behaviours (do they feel true to the frameworks?), and the Critique Lens outputs (is the analysis accurate and useful?). Not a huge time commitment, but it needs to happen at the right points.</p>
@@ -361,7 +381,7 @@
    <tr><td><strong>CEQ team reviewing Knowledge Index content</strong></td><td>CEQ Knowledge Index</td><td>Low - needs a few hours of someone's time</td></tr>
    <tr><td><strong>Real coaching recordings for testing</strong></td><td>Critique Lenses</td><td>Medium - the lenses are only as good as the testing</td></tr>
    <tr><td><strong>Framework accuracy check</strong></td><td>Practice Partner Modes</td><td>Low - frameworks are already loaded</td></tr>
-   <tr><td><strong>Client input</strong></td><td>Deeper customisation (beyond these five)</td><td>Not yet applicable</td></tr>
+   <tr><td><strong>Client input</strong></td><td>Deeper customisation (beyond these six)</td><td>Not yet applicable</td></tr>
   </table>
 
 
@@ -373,9 +393,9 @@
    <div class="part-title">Where We Are</div>
   </div>
 
-  <p>ARIA's in a good place. It's already a proper working product, not a prototype. These five enhancements will make the critique more flexible, give users a way to browse and explore the full CEQ knowledge base, create a realistic practice space for the kinds of conversations managers actually have, and help them prepare properly before they walk into a meeting.</p>
+  <p>ARIA's in a good place. It's already a proper working product, not a prototype. These enhancements will make the critique fully interactive, give users a way to browse and explore the full CEQ knowledge base, create a realistic practice space for the kinds of conversations managers actually have, and help them prepare properly before they walk into a meeting.</p>
 
-  <p>The bigger vision - bespoke customisation per organisation, 360 feedback, individual profiles - we'll get there, but it makes sense to do it with a real client rather than guessing at what they need. For now, five enhancements, 6-8 weeks, and the running costs are pennies.</p>
+  <p>The bigger vision - bespoke customisation per organisation, 360 feedback, individual profiles - we'll get there, but it makes sense to do it with a real client rather than guessing at what they need. For now, six enhancements, 6-8 weeks, and the running costs are pennies.</p>
 
 
  </div>
